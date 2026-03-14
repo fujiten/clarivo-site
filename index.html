@@ -11,39 +11,74 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: #fafafa;
+      background: linear-gradient(180deg, #f5f3f0 0%, #eae7e3 100%);
       color: #333;
+    }
+    .accent-line {
+      height: 4px;
+      background: linear-gradient(90deg, #2c2c2c, #555);
+      flex-shrink: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      font-size: 0.85rem;
+    }
+    nav a {
+      color: #666;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #333;
+    }
+    nav a.active {
+      color: #333;
+      font-weight: 600;
     }
     main {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .container {
-      text-align: center;
       padding: 2rem;
-      max-width: 600px;
+    }
+    .card {
+      text-align: center;
+      padding: 3rem 2.5rem;
+      max-width: 560px;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
     }
     h1 {
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 2rem;
+      color: #222;
     }
     section {
-      margin-bottom: 1.5rem;
+      padding: 1.25rem 0;
+    }
+    section:first-of-type {
+      border-bottom: 1px solid #eee;
     }
     section h2 {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #999;
+      letter-spacing: 0.1em;
+      color: #aaa;
       margin-bottom: 0.5rem;
     }
     section p {
       font-size: 1.05rem;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #555;
     }
     a {
@@ -56,17 +91,37 @@
     footer {
       text-align: center;
       padding: 1.5rem 2rem;
-      font-size: 0.85rem;
-      color: #999;
+      font-size: 0.8rem;
+      color: #aaa;
     }
     footer a {
-      color: #999;
+      color: #aaa;
+    }
+    footer a:hover {
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem 1.5rem;
+        border-radius: 8px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      nav {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="accent-line"></div>
+  <nav>
+    <a href="/" class="active">Home</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </nav>
   <main>
-    <div class="container">
+    <div class="card">
       <h1>Clarivo</h1>
       <section>
         <h2>About</h2>
@@ -79,7 +134,7 @@
     </div>
   </main>
   <footer>
-    &copy; 2026 Clarivo &middot; <a href="/privacy-policy.html">Privacy Policy</a>
+    &copy; 2026 Clarivo
   </footer>
 </body>
 </html>
